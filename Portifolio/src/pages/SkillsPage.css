@@ -1,0 +1,354 @@
+.skills-page {
+    background: var(--bg-main);
+    min-height: 100vh;
+    padding-bottom: 6rem;
+}
+
+.skills-hero {
+    text-align: center;
+    padding: 6rem 0 4rem;
+}
+
+.skills-subtitle {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.skills-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.skills-desc {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skill-category-container {
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-category-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.proficiency-dots {
+    display: flex;
+    gap: 2px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dot.filled {
+    background: white;
+}
+
+/* Category Specific Colors */
+.cat-blue .category-icon {
+    background: #2563eb;
+}
+
+.cat-blue .skill-pill {
+    background: #2563eb;
+}
+
+.cat-teal .category-icon {
+    background: #0d9488;
+}
+
+.cat-teal .skill-pill {
+    background: #0d9488;
+}
+
+.cat-green .category-icon {
+    background: #16a34a;
+}
+
+.cat-green .skill-pill {
+    background: #16a34a;
+}
+
+.cat-purple .category-icon {
+    background: #9333ea;
+}
+
+.cat-purple .skill-pill {
+    background: #9333ea;
+}
+
+.cat-orange .category-icon {
+    background: #ea580c;
+}
+
+.cat-orange .skill-pill {
+    background: #ea580c;
+}
+
+.cat-pink .category-icon {
+    background: #db2777;
+}
+
+.cat-pink .skill-pill {
+    background: #db2777;
+}
+
+.cat-dark .category-icon {
+    background: #475569;
+}
+
+.cat-dark .skill-pill {
+    background: #475569;
+}
+
+/* Competitive Programming Section */
+.cp-section {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.cp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cp-card {
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.cp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.cp-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.cp-platform {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.cp-rating {
+    background: #f59e0b;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.cp-rating.blue {
+    background: #2563eb;
+}
+
+.cp-rating.green {
+    background: #16a34a;
+}
+
+.cp-rating.orange {
+    background: #f97316;
+}
+
+/* Certifications Section */
+.certs-section {
+    margin-bottom: 4rem;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    /* border: 1px solid var(--border); */
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s;
+}
+
+.cert-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.cert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+
+.cert-info h4 {
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+}
+
+.cert-info span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .skills-title {
+        font-size: 2.5rem;
+    }
+
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+}
+
+/* Achievement Banner (mimicking Contact Card) */
+.achievement-banner {
+    background-color: #2563eb;
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at center, #2563eb 0%, #0284c7 100%);
+    background-size: 30px 30px, 100% 100%;
+    border-radius: 1.5rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+}
+
+.achievement-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.achievement-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.achievement-desc {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .achievement-title {
+        font-size: 1.5rem;
+    }
+}

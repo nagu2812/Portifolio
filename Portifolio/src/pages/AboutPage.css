@@ -1,0 +1,361 @@
+.about-page {
+    /* padding-top: 4rem; handled by main */
+    background: var(--bg-main);
+}
+
+/* Hero Section */
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+.profile-card-display {
+    background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+    border-radius: 2rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.4);
+}
+
+.profile-card-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 60%;
+    height: 60%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cn-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.floating-badge {
+    position: absolute;
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    animation: float 6s ease-in-out infinite;
+}
+
+.badge-codechef {
+    top: 15%;
+    left: -10%;
+}
+
+.badge-icpc {
+    bottom: 15%;
+    right: -10%;
+    animation-delay: 2s;
+}
+
+.badge-icon {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.badge-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.badge-sub {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Info Col */
+.section-label {
+    color: var(--primary);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.profile-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.profile-role {
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.profile-bio p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.c-icon {
+    color: var(--primary);
+}
+
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Education Section */
+.education-section {
+    margin-bottom: 8rem;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.edu-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.edu-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.edu-icon.bg-blue {
+    background: #3b82f6;
+}
+
+.edu-icon.bg-purple {
+    background: #8b5cf6;
+}
+
+.edu-icon.bg-teal {
+    background: #14b8a6;
+}
+
+.edu-school {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.edu-loc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.edu-degree {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    min-height: 3rem;
+}
+
+.edu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.edu-grade {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.edu-year {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Milestones */
+.milestones-section {
+    margin-bottom: 6rem;
+}
+
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.milestone-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.milestone-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.milestone-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.milestone-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    height: fit-content;
+    text-transform: uppercase;
+}
+
+/* Badge Colors */
+.bg-yellow {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.bg-gold {
+    background: #eab308;
+    color: #fff;
+}
+
+.bg-red {
+    background: #ef4444;
+    color: #fff;
+}
+
+.bg-blue {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.bg-purple {
+    background: #8b5cf6;
+    color: #fff;
+}
+
+.bg-green {
+    background: #10b981;
+    color: #fff;
+}
+
+.milestone-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.milestone-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .about-image-col {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .badge-codechef {
+        left: 0;
+    }
+
+    .badge-icpc {
+        right: 0;
+    }
+
+    .education-grid,
+    .milestones-grid {
+        grid-template-columns: 1fr;
+    }
+}
