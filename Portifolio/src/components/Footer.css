@@ -125,4 +125,14 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .bottom-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
 }

@@ -348,3 +348,27 @@
         min-height: 300px;
     }
 }
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .showcase-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .media-actions {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-pills {
+        gap: 0.4rem;
+    }
+}

@@ -6,6 +6,11 @@
 
 main {
   flex: 1;
-  padding-top: 80px;
-  /* Space for fixed header */
+  padding-top: 80px; /* Space for fixed header */
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 70px;
+  }
 }

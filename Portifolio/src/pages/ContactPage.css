@@ -331,4 +331,18 @@
     .contact-title {
         font-size: 2rem;
     }
+
+    .contact-form-container {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 1.75rem;
+    }
+
+    .social-connect-card {
+        padding: 1.25rem;
+    }
 }

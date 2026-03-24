@@ -359,3 +359,33 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .profile-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .profile-name {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cn-text {
+        font-size: 3rem;
+    }
+}

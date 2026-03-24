@@ -21,6 +21,7 @@
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
+    z-index: 1100;
 }
 
 .logo-icon {
@@ -34,6 +35,7 @@
     justify-content: center;
     font-weight: 700;
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .logo-text {
@@ -42,21 +44,25 @@
     color: var(--text-main);
 }
 
+/* ── Desktop Nav ── */
 .nav-menu {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-link {
     font-weight: 500;
     color: var(--text-secondary);
     font-size: 0.95rem;
+    transition: color 0.2s;
 }
 
 .nav-link:hover {
     color: var(--primary);
 }
 
+/* ── Desktop Actions ── */
 .header-actions {
     display: flex;
     align-items: center;
@@ -65,14 +71,27 @@
 
 .icon-link,
 .icon-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     color: var(--text-secondary);
-    /* ... unchanged ... */
+    background: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
-/* Theme Toggle Color */
+.icon-link:hover,
+.icon-btn:hover {
+    background: var(--bg-card);
+    color: var(--primary);
+}
+
+/* Theme Toggle */
 .theme-btn {
     color: #6366f1;
-    /* Indigo color */
     background: rgba(99, 102, 241, 0.1);
 }
 
@@ -81,21 +100,98 @@
     color: #4f46e5;
 }
 
-
-
-.icon-link:hover,
-.icon-btn:hover {
-    background: var(--bg-card);
-    color: var(--primary);
-}
-
 .resume-btn {
     padding: 0.6rem 1.25rem;
     font-size: 0.9rem;
 }
 
+/* ── Mobile Actions (hidden on desktop) ── */
+.mobile-actions {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1100;
+}
+
+/* ── Mobile menu footer (socials + resume inside drawer) ── */
+.nav-mobile-footer {
+    display: none;
+}
+
+/* ── Overlay ── */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+/* ───────────────────────────────────────
+   Tablet & Mobile  ≤ 768px
+─────────────────────────────────────── */
 @media (max-width: 768px) {
+
+    /* Hide desktop nav and actions */
     .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100dvh;
+        background: var(--bg-card);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 5rem 2rem 2rem;
+        z-index: 1050;
+        transition: right 0.3s ease;
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+        overflow-y: auto;
+    }
+
+    .nav-menu.open {
+        right: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-main);
+    }
+
+    .nav-link:last-of-type {
+        border-bottom: none;
+    }
+
+    /* Show mobile footer inside drawer */
+    .nav-mobile-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        align-items: center;
+    }
+
+    /* Hide desktop header-actions */
+    .header-actions {
         display: none;
+    }
+
+    /* Show mobile-actions */
+    .mobile-actions {
+        display: flex;
+    }
+
+    /* Hamburger button */
+    .hamburger-btn {
+        color: var(--text-secondary);
+        background: transparent;
+    }
+
+    .hamburger-btn:hover {
+        background: var(--bg-card);
+        color: var(--primary);
     }
 }
