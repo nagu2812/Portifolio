@@ -25,6 +25,18 @@ const ExperiencePage = () => {
                 'Designed and integrated the solution within a full-stack application, enabling automated, scalable, and real-time email filtering',
                 'Gained hands-on experience with ML model deployment and end-to-end pipeline integration'
             ]
+        },
+        {
+            period: 'Jan 2025 - Feb 2025',
+            role: 'Data Structures & Algorithms Intern',
+            company: 'Technical Hub Pvt. Ltd',
+            location: 'Surampalem',
+            bullets: [
+                'Solved 100+ problems on arrays, linked lists, trees, graphs, and dynamic programming using C++ and Java',
+                'Implemented core data structures from scratch — stack, queue, heap, trie, segment tree — with optimized time and space complexity',
+                'Studied and applied algorithmic paradigms including divide & conquer, greedy, backtracking, and graph traversal (BFS/DFS)',
+                'Practiced competitive programming problems on platforms like LeetCode and Codeforces to strengthen problem-solving skills'
+            ]
         }
     ];
 
@@ -70,7 +82,7 @@ const ExperiencePage = () => {
 
     const stats = [
         { value: '2+', label: 'Years of Study' },
-        { value: '1',  label: 'Internship' },
+        { value: '2',  label: 'Internships' },
         { value: '8.8', label: 'CGPA' },
         { value: '#132', label: 'ICPC Onsite 2025' }
     ];
