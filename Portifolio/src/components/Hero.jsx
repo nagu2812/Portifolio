@@ -17,7 +17,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <div className="hero-badge">
-                        <span className="sparkle">✨</span> ICPC 2025 Amritapuri Regional Qualifier
+                        <span className="sparkle">✨</span> ICPC Amritapuri Onsite 2025 — Rank 132
                     </div>
 
                     <h1 className="hero-title">
@@ -40,17 +40,17 @@ const Hero = () => {
                         <Link to="/projects" className="btn btn-primary">
                             View My Work <ArrowRight size={18} />
                         </Link>
-                        <button className="btn btn-outline">
+                        <a href="/nagendra_ml.pdf" download="Nagendra_Resume.pdf" className="btn btn-outline">
                             <Download size={18} /> Download Resume
-                        </button>
+                        </a>
                     </div>
 
                     <div className="hero-social">
                         <span>Find me on</span>
                         <div className="social-links">
-                            <a href="#" className="social-icon"><Github size={20} /></a>
-                            <a href="#" className="social-icon"><Linkedin size={20} /></a>
-                            <a href="#" className="social-icon"><Code size={20} /></a>
+                            <a href="https://github.com/nagu2812" target="_blank" rel="noreferrer" className="social-icon"><Github size={20} /></a>
+                            <a href="https://www.linkedin.com/in/nagendra-chanuboyina-8b52b32b4/" target="_blank" rel="noreferrer" className="social-icon"><Linkedin size={20} /></a>
+                            <a href="https://leetcode.com/u/nrokzzz_/" target="_blank" rel="noreferrer" className="social-icon"><Code size={20} /></a>
                         </div>
                     </div>
                 </motion.div>

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Code } from 'lucide-react';
-import { motion } from 'framer-motion';
-// import emailjs from '@emailjs/browser'; // Uncomment when ready to integrate
+import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Code, CheckCircle, XCircle, Loader } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import './ContactPage.css';
+
+const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -22,21 +26,23 @@ const ContactPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        // Simulating email sending for now
-        // To use EmailJS:
-        // 1. npm install @emailjs/browser
-        // 2. emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_PUBLIC_KEY')
+        const templateParams = {
+            from_name:  formData.name,
+            from_email: formData.email,
+            subject:    formData.subject,
+            message:    formData.message,
+            to_name:    'Nagendra'
+        };
 
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            console.log('Form submitted:', formData);
+            await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
-            setTimeout(() => setSubmitStatus(null), 5000);
+            setTimeout(() => setSubmitStatus(null), 6000);
         } catch (error) {
-            console.error('Error sending email:', error);
+            console.error('EmailJS error:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
@@ -125,16 +131,43 @@ const ContactPage = () => {
                             </div>
 
                             <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                                {isSubmitting ? 'Sending...' : (
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader size={18} className="spin" /> Sending...
+                                    </>
+                                ) : (
                                     <>
                                         <Send size={18} /> Send Message
                                     </>
                                 )}
                             </button>
 
-                            {submitStatus === 'success' && (
-                                <p className="status-msg success">Message sent successfully!</p>
-                            )}
+                            <AnimatePresence>
+                                {submitStatus === 'success' && (
+                                    <motion.div
+                                        className="status-msg success"
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <CheckCircle size={20} />
+                                        <span>Message sent! I'll get back to you within 24 hours.</span>
+                                    </motion.div>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <motion.div
+                                        className="status-msg error"
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <XCircle size={20} />
+                                        <span>Failed to send. Please email me directly at <a href="mailto:chanuboyinanagendra@gmail.com">chanuboyinanagendra@gmail.com</a></span>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </form>
                     </motion.div>
 
@@ -144,7 +177,7 @@ const ContactPage = () => {
                             <InfoCard
                                 icon={<Mail size={24} />}
                                 label="Email"
-                                value="23a91a0581@aec.edu.in"
+                                value="chanuboyinanagendra@gmail.com"
                                 color="blue"
                             />
                             <InfoCard
@@ -174,20 +207,20 @@ const ContactPage = () => {
                                 <SocialLink
                                     icon={<Github size={24} />}
                                     name="GitHub"
-                                    username="@nagendra"
-                                    url="https://github.com"
+                                    username="@nagu2812"
+                                    url="https://github.com/nagu2812"
                                 />
                                 <SocialLink
                                     icon={<Linkedin size={24} />}
                                     name="LinkedIn"
                                     username="Chanuboyina Nagendra"
-                                    url="https://linkedin.com"
+                                    url="https://www.linkedin.com/in/nagendra-chanuboyina-8b52b32b4/"
                                 />
                                 <SocialLink
                                     icon={<Code size={24} />}
                                     name="LeetCode"
-                                    username="@nagendra"
-                                    url="https://leetcode.com"
+                                    username="@nrokzzz_"
+                                    url="https://leetcode.com/u/nrokzzz_/"
                                 />
                             </div>
                         </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { MapPin, Mail, Phone, Calendar, Download, ArrowRight, GraduationCap, Trophy, Award, BookOpen, Star, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Contact from '../components/Contact';
 import './AboutPage.css';
 
 const AboutPage = () => {
@@ -33,8 +32,8 @@ const AboutPage = () => {
                             <div className="floating-badge badge-icpc">
                                 <div className="badge-icon"><TrophyIcon /></div>
                                 <div>
-                                    <div className="badge-title">ICPC Qualifier</div>
-                                    <div className="badge-sub">2025 Amritapuri</div>
+                                    <div className="badge-title">ICPC Rank 132</div>
+                                    <div className="badge-sub">Amritapuri Onsite 2025</div>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +65,7 @@ const AboutPage = () => {
                             </div>
                             <div className="contact-item">
                                 <Mail size={20} className="c-icon" />
-                                <span>23a91a0581@aec.edu.in</span>
+                                <span>chanuboyinanagendra@gmail.com</span>
                             </div>
                             <div className="contact-item">
                                 <Phone size={20} className="c-icon" />
@@ -79,12 +78,12 @@ const AboutPage = () => {
                         </div>
 
                         <div className="profile-actions">
-                            <button className="btn btn-primary">
+                            <a href="/contact" className="btn btn-primary">
                                 Get In Touch <ArrowRight size={18} />
-                            </button>
-                            <button className="btn btn-outline">
+                            </a>
+                            <a href="/nagendra_ml.pdf" download="Nagendra_Resume.pdf" className="btn btn-outline">
                                 <Download size={18} /> Download Resume
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
                 </section>
@@ -103,7 +102,7 @@ const AboutPage = () => {
                             <p className="edu-loc"><MapPin size={14} /> Surampalem</p>
                             <p className="edu-degree">Bachelor of Technology - Computer Science Engineering</p>
                             <div className="edu-footer">
-                                <span className="edu-grade">CGPA: 8.98/10</span>
+                                <span className="edu-grade">CGPA: 8.8/10</span>
                                 <span className="edu-year">2023 - 2027</span>
                             </div>
                         </div>
@@ -142,9 +141,9 @@ const AboutPage = () => {
                         <MilestoneCard
                             icon={<Trophy size={28} />}
                             color="yellow"
-                            title="ICPC 2025 Amritapuri Regional Qualifier"
-                            desc="Qualified with team Codeblooded and promoted to the on-site regional round - a prestigious competitive programming achievement."
-                            badge="ICPC"
+                            title="ICPC Amritapuri Onsite 2025 — Rank 132"
+                            desc="Achieved Rank 132 at ICPC Amritapuri Onsite 2025 as a member of team CodeBlooded, competing among top collegiate programming teams nationwide."
+                            badge="Rank 132"
                         />
                         <MilestoneCard
                             icon={<Award size={28} />}
@@ -175,12 +174,11 @@ const AboutPage = () => {
                             icon={<Zap size={28} />}
                             color="green"
                             title="Academic Excellence"
-                            desc="Maintaining 8.98/10 CGPA at Aditya Engineering College while actively participating in coding competitions and internships."
+                            desc="Maintaining 8.8/10 CGPA at Aditya Engineering College while actively participating in coding competitions and internships."
                         />
                     </div>
                 </section>
             </div>
-            <Contact />
         </div>
     );
 };

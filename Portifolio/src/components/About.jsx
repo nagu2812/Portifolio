@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
@@ -25,9 +26,9 @@ const About = () => {
                     </p>
                 </div>
 
-                <button className="btn btn-outline about-btn">
+                <Link to="/about" className="btn btn-outline about-btn">
                     Learn More About Me <ArrowRight size={18} />
-                </button>
+                </Link>
             </motion.div>
         </section>
     );

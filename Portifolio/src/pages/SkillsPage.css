@@ -179,7 +179,7 @@
     background: var(--bg-card);
     padding: 2.5rem 2rem;
     border-radius: 1.5rem;
-
+    border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
@@ -190,7 +190,7 @@
 
 .cp-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--hover-color);
+    box-shadow: 0 0 24px var(--hover-color);
     border-color: var(--hover-color);
 }
 
@@ -233,14 +233,19 @@
     background: #f97316;
 }
 
+.cp-rating.orange2 {
+    background: #ea580c;
+}
+
 /* Certifications Section */
 .certs-section {
     margin-bottom: 4rem;
 }
 
 .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     margin-top: 3rem;
 }
@@ -249,11 +254,12 @@
     background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 1rem;
-    /* border: 1px solid var(--border); */
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
     display: flex;
     align-items: center;
     gap: 1rem;
+    min-width: 180px;
     transition: all 0.3s;
 }
 

@@ -11,6 +11,17 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   --header-bg: rgba(255, 255, 255, 0.8);
+  /* Derived tokens */
+  --hero-grid: #e5e7eb;
+  --badge-bg: #dbeafe;
+  --pill-bg: #f1f5f9;
+  /* Footer (always dark) */
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+  --footer-border: #1e293b;
+  --footer-icon-bg: #1e293b;
+  --footer-icon-hover-bg: #334155;
+  --footer-badge-bg: #1e293b;
 }
 
 [data-theme='dark'] {
@@ -26,6 +37,10 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
   --header-bg: rgba(15, 23, 42, 0.8);
+  /* Derived tokens */
+  --hero-grid: #1e293b;
+  --badge-bg: rgba(59, 130, 246, 0.15);
+  --pill-bg: #0f172a;
 }
 
 body {
@@ -91,9 +106,9 @@ ul {
 }
 
 .btn-outline {
-  background: white;
+  background: var(--bg-card);
   color: var(--text-main);
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
 }
 
 .btn-outline:hover {

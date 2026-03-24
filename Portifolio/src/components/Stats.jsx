@@ -5,14 +5,14 @@ import './Stats.css';
 const statsData = [
     {
         icon: <GraduationCap size={24} />,
-        value: '8.98/10',
+        value: '8.8/10',
         label: 'CGPA',
         color: 'bg-blue-100 text-blue-600'
     },
     {
         icon: <Trophy size={24} />,
-        value: '2025',
-        label: 'ICPC Qualifier',
+        value: '#132',
+        label: 'ICPC Onsite 2025',
         color: 'bg-cyan-100 text-cyan-600'
     },
     {

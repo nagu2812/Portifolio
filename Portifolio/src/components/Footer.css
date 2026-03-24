@@ -1,6 +1,6 @@
 .footer {
-    background: #0f172a;
-    color: #94a3b8;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding-top: 4rem;
 }
 
@@ -9,7 +9,7 @@
     grid-template-columns: 2fr 1fr 1fr;
     gap: 4rem;
     padding-bottom: 4rem;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid var(--footer-border);
 }
 
 .footer-col {
@@ -45,7 +45,7 @@
 .footer-icon {
     width: 40px;
     height: 40px;
-    background: #1e293b;
+    background: var(--footer-icon-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +55,7 @@
 }
 
 .footer-icon:hover {
-    background: #334155;
+    background: var(--footer-icon-hover-bg);
     color: white;
 }
 
@@ -96,14 +96,13 @@
 }
 
 .badge-star {
-    background: #1e293b;
+    background: var(--footer-badge-bg);
     color: #38bdf8;
 }
 
 .badge-pupil {
-    background: #1e293b;
+    background: var(--footer-badge-bg);
     color: #4ade80;
-    /* Pupil is green usually in CF, or maybe cyan */
 }
 
 .footer-bottom {

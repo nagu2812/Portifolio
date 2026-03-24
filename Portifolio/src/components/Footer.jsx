@@ -17,10 +17,10 @@ const Footer = () => {
                         Passionate about building innovative solutions and solving complex problems. Currently pursuing B.Tech in Computer Science at Aditya Engineering College.
                     </p>
                     <div className="footer-socials">
-                        <a href="#" className="footer-icon"><Github size={20} /></a>
-                        <a href="#" className="footer-icon"><Linkedin size={20} /></a>
-                        <a href="#" className="footer-icon"><Code size={20} /></a>
-                        <a href="#" className="footer-icon"><Mail size={20} /></a>
+                        <a href="https://github.com/nagu2812" target="_blank" rel="noreferrer" className="footer-icon"><Github size={20} /></a>
+                        <a href="https://www.linkedin.com/in/nagendra-chanuboyina-8b52b32b4/" target="_blank" rel="noreferrer" className="footer-icon"><Linkedin size={20} /></a>
+                        <a href="https://leetcode.com/u/nrokzzz_/" target="_blank" rel="noreferrer" className="footer-icon"><Code size={20} /></a>
+                        <a href="mailto:chanuboyinanagendra@gmail.com" className="footer-icon"><Mail size={20} /></a>
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/projects">Projects</Link></li>
                         <li><Link to="/experience">Experience</Link></li>
-                        <li><a href="/#contact">Contact</a></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="container bottom-content">
                     <p>&copy; 2025 Nagendra. Built with <Heart size={14} fill="#ef4444" color="#ef4444" /> using React</p>
-                    <p className="qualifier-text">ICPC 2025 Amritapuri Regional Qualifier</p>
+                    <p className="qualifier-text">ICPC Amritapuri Onsite 2025 — Rank 132 | Team CodeBlooded</p>
                 </div>
             </div>
         </footer>

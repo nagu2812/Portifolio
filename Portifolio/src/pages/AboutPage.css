@@ -43,7 +43,7 @@
 
 .floating-badge {
     position: absolute;
-    background: white;
+    background: var(--bg-card);
     padding: 0.75rem 1rem;
     border-radius: 16px;
     display: flex;
@@ -67,7 +67,7 @@
 .badge-icon {
     width: 40px;
     height: 40px;
-    background: #f1f5f9;
+    background: var(--pill-bg);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -78,7 +78,7 @@
 .badge-title {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #0f172a;
+    color: var(--text-main);
 }
 
 .badge-sub {
@@ -109,7 +109,7 @@
 .profile-name {
     font-size: 3rem;
     font-weight: 700;
-    color: #0f172a;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
     line-height: 1.1;
 }
@@ -208,7 +208,7 @@
 
 .edu-loc {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -242,7 +242,7 @@
 
 .edu-year {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 /* Milestones */

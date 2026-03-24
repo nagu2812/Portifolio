@@ -7,8 +7,8 @@
     position: relative;
     overflow: hidden;
     /* Background grid pattern */
-    background-image: linear-gradient(#e5e7eb 1px, transparent 1px),
-        linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+    background-image: linear-gradient(var(--hero-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--hero-grid) 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: center center;
 }
@@ -73,8 +73,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: #dbeafe;
-    color: #2563eb;
+    background: var(--badge-bg);
+    color: var(--primary);
     border-radius: 9999px;
     font-weight: 500;
     font-size: 0.9rem;
@@ -108,7 +108,7 @@
     background: var(--bg-card);
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border);
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-secondary);
@@ -142,8 +142,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    color: #64748b;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
     transition: all 0.2s;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .stat-card {
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);

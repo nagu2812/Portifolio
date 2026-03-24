@@ -1,33 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Mail, Bell, Shield, ExternalLink, Code as CodeIcon } from 'lucide-react';
+import { Brain, Mail, Bell, Users, ExternalLink, Code as CodeIcon, Layers, Database } from 'lucide-react';
 import './Projects.css';
 
-const features = [
+const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i = 0) => ({
+        opacity: 1, y: 0,
+        transition: { duration: 0.55, delay: i * 0.1, ease: 'easeOut' }
+    })
+};
+
+const projects = [
     {
-        icon: <Brain size={32} />,
-        title: 'Machine Learning',
-        desc: 'Implemented ML algorithms for intelligent email categorization',
-        color: 'bg-purple-100 text-purple-600'
+        name: 'Work-Ping',
+        tagline: 'MERN Stack • Machine Learning • Flask • React Native',
+        overview: 'A full-stack application using the MERN stack with integrated Machine Learning features. Implements a Face Recognition model using Python with data preprocessing and model optimization techniques.',
+        highlights: [
+            'Face Recognition model with Python — data preprocessing & model optimization',
+            'Scalable RESTful APIs built with Node.js and Express.js',
+            'MongoDB for data management with real-time processing',
+            'End-to-end deployment pipeline ensuring scalability and performance'
+        ],
+        pills: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Python', 'Flask', 'Machine Learning', 'React Native'],
+        icon: <Users size={40} color="white" />,
+        gradient: 'linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)',
+        label: 'Live Demo',
+        accentColor: '#2563eb'
     },
     {
-        icon: <Mail size={32} />,
-        title: 'Email Processing',
-        desc: 'Built systems to parse and analyze email content at scale',
-        color: 'bg-blue-100 text-blue-600'
-    },
-    {
-        icon: <Bell size={32} />,
-        title: 'Smart Notifications',
-        desc: 'WhatsApp integration for automated deadline reminders',
-        color: 'bg-green-100 text-green-600'
-    },
-    {
-        icon: <Shield size={32} />,
-        title: 'Security First',
-        desc: 'Authentication, spam filtering, and secure data handling',
-        color: 'bg-orange-100 text-orange-600'
+        name: 'Mail-or-a',
+        tagline: 'Python • Flask • React.js • Node.js • MongoDB • ML',
+        overview: 'An Email Processing and Classification System using Machine Learning with Python — implements Naive Bayes for spam detection and category prediction with WhatsApp Cloud API for automated notifications.',
+        highlights: [
+            'Naive Bayes classifier for spam detection and email category prediction',
+            'NLP techniques for text preprocessing and feature extraction',
+            'Deadline extraction from emails with WhatsApp Cloud API notifications',
+            'Full-stack web app with authentication and real-time updates'
+        ],
+        pills: ['Python', 'Flask', 'React.js', 'Node.js', 'MongoDB', 'Naive Bayes', 'NLP', 'WhatsApp API'],
+        icon: <Mail size={40} color="white" />,
+        gradient: 'linear-gradient(135deg, #7c3aed 0%, #db2777 100%)',
+        label: 'View Project',
+        accentColor: '#7c3aed'
     }
+];
+
+const features = [
+    { icon: <Brain size={32} />, title: 'Machine Learning', desc: 'Naive Bayes, Face Recognition, NLP — integrating ML into production apps', color: 'bg-purple-100 text-purple-600' },
+    { icon: <Layers size={32} />, title: 'Full Stack', desc: 'MERN stack with Flask microservices and React Native mobile support', color: 'bg-blue-100 text-blue-600' },
+    { icon: <Bell size={32} />, title: 'Smart Automation', desc: 'WhatsApp Cloud API integration for real-time automated notifications', color: 'bg-green-100 text-green-600' },
+    { icon: <Database size={32} />, title: 'Scalable APIs', desc: 'RESTful APIs with Node.js/Express.js and MongoDB for production-grade data handling', color: 'bg-orange-100 text-orange-600' }
 ];
 
 const Projects = () => {
@@ -38,9 +61,10 @@ const Projects = () => {
                 {/* Header */}
                 <motion.div
                     className="projects-header"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: true }}
+                    variants={fadeUp}
                 >
                     <span className="section-subtitle">PORTFOLIO</span>
                     <h2 className="section-title">Featured Projects</h2>
@@ -49,129 +73,65 @@ const Projects = () => {
                     </p>
                 </motion.div>
 
-                {/* Features Grid */}
+                {/* Feature Cards */}
                 <div className="features-grid">
-                    {features.map((feature, index) => (
+                    {features.map((feature, i) => (
                         <motion.div
-                            key={index}
+                            key={i}
                             className="feature-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            initial="hidden"
+                            whileInView="visible"
                             viewport={{ once: true }}
+                            variants={fadeUp}
+                            custom={i}
                         >
-                            <div className={`feature-icon ${feature.color}`}>
-                                {feature.icon}
-                            </div>
+                            <div className={`feature-icon ${feature.color}`}>{feature.icon}</div>
                             <h3 className="feature-title">{feature.title}</h3>
                             <p className="feature-desc">{feature.desc}</p>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* Project Spotlight: Last Line */}
-                <motion.div
-                    className="project-showcase"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="showcase-media">
-                        {/* Placeholder for project image/video */}
-                        <div className="media-placeholder">
-                            <div className="app-icon-large">
-                                {/* Abstract icon representation */}
-                                <span className="sparkle-large">✨</span>
+                {/* Project Showcases */}
+                {projects.map((project, i) => (
+                    <motion.div
+                        key={project.name}
+                        className="project-showcase"
+                        initial={{ opacity: 0, scale: 0.97 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.55, delay: i * 0.1 }}
+                        style={{ marginBottom: i < projects.length - 1 ? '4rem' : '6rem' }}
+                    >
+                        <div className="showcase-media" style={{ background: project.gradient }}>
+                            <div className="media-placeholder">
+                                <div className="app-icon-large">{project.icon}</div>
                             </div>
-                        </div>
-                        <div className="media-actions">
-                            <button className="media-btn"><CodeIcon size={18} /> Code</button>
-                            <button className="media-btn primary"><ExternalLink size={18} /> Live Demo</button>
-                        </div>
-                    </div>
-
-                    <div className="showcase-content">
-                        <h3 className="project-title">Last Line - Smart Email Classifier</h3>
-                        <p className="project-overview">
-                            An intelligent email classification system that automatically categorizes emails into Jobs, Internships, Hackathons, and Others using Machine Learning algorithms. Features deadline extraction and automated WhatsApp reminders.
-                        </p>
-
-                        <ul className="project-highlights">
-                            <li>ML-powered email classification with 95%+ accuracy</li>
-                            <li>Automatic deadline extraction and prediction from email content</li>
-                            <li>WhatsApp Cloud API integration for automated deadline reminders</li>
-                        </ul>
-
-                        <div className="tech-pills">
-                            {['Python', 'Flask', 'React.js', 'Node.js', 'MongoDB', 'Machine Learning'].map(t => (
-                                <span key={t} className="tech-pill">{t}</span>
-                            ))}
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Deep Dive Section */}
-                <div className="deep-dive-section">
-                    <div className="section-center-header">
-                        <span className="section-subtitle">DEEP DIVE</span>
-                        <h2 className="section-title">Last Line - In Detail</h2>
-                    </div>
-
-                    <div className="deep-dive-content">
-                        <div className="detail-media">
-                            <div className="blue-card-display">
-                                <div className="center-icon">
-                                    <span className="sparkle-white">✨</span>
-                                    <span className="app-name">Last Line</span>
-                                </div>
-                                <div className="floating-pills">
-                                    <span>Python</span><span>React</span><span>MongoDB</span><span>ML</span>
-                                </div>
+                            <div className="media-actions">
+                                <a href={`https://github.com/nagu2812`} target="_blank" rel="noreferrer" className="media-btn">
+                                    <CodeIcon size={16} /> Code
+                                </a>
+                                <a href={`https://github.com/nagu2812`} target="_blank" rel="noreferrer" className="media-btn primary">
+                                    <ExternalLink size={16} /> {project.label}
+                                </a>
                             </div>
                         </div>
 
-                        <div className="detail-info">
-                            <h3 className="detail-heading">Smart Email Classification System</h3>
-                            <p className="detail-text">
-                                Last Line is a comprehensive email management solution that leverages machine learning to automatically categorize incoming emails, extract important deadlines, and send timely reminders via WhatsApp.
-                            </p>
-
-                            <div className="feature-list">
-                                <div className="feature-item">
-                                    <div className="f-icon bg-purple-100 text-purple-600"><Brain size={20} /></div>
-                                    <div>
-                                        <h4>ML Classification</h4>
-                                        <p>Trained models to categorize emails into Jobs, Internships, Hackathons, and Others with high accuracy.</p>
-                                    </div>
-                                </div>
-
-                                <div className="feature-item">
-                                    <div className="f-icon bg-blue-100 text-blue-600"><Mail size={20} /></div>
-                                    <div>
-                                        <h4>Deadline Extraction</h4>
-                                        <p>NLP-based system to automatically extract and predict application deadlines from email content.</p>
-                                    </div>
-                                </div>
-
-                                <div className="feature-item">
-                                    <div className="f-icon bg-green-100 text-green-600"><Bell size={20} /></div>
-                                    <div>
-                                        <h4>WhatsApp Integration</h4>
-                                        <p>Integrated WhatsApp Cloud API for automated deadline reminders, ensuring you never miss an opportunity.</p>
-                                    </div>
-                                </div>
-
-                                <div className="feature-item">
-                                    <div className="f-icon bg-orange-100 text-orange-600"><Shield size={20} /></div>
-                                    <div>
-                                        <h4>Full-Stack Architecture</h4>
-                                        <p>Complete web application with authentication, spam filtering, and real-time notifications.</p>
-                                    </div>
-                                </div>
+                        <div className="showcase-content">
+                            <h3 className="project-title">{project.name}</h3>
+                            <p className="project-tagline">{project.tagline}</p>
+                            <p className="project-overview">{project.overview}</p>
+                            <ul className="project-highlights">
+                                {project.highlights.map((h, j) => <li key={j}>{h}</li>)}
+                            </ul>
+                            <div className="tech-pills">
+                                {project.pills.map(t => (
+                                    <span key={t} className="tech-pill">{t}</span>
+                                ))}
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                ))}
 
             </div>
         </section>
